@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 class Sortbyinterest implements Comparator<Investor>
 {
@@ -15,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<Investor> investors = new ArrayList<Investor>();
-        System.out.println("Enter investors number: ");
+/*        System.out.println("Enter investors number: ");
         int number = input.nextInt();
 
         for(int i = 0; i < number; i++) {
@@ -36,7 +38,35 @@ public class Main {
             Investor inv = new Investor(firstName, secondName, mail, sum, interest, phoneNumber);
             investors.add(inv);
         }
+*/
+        File file = new File("src\\investors");
+        try {
 
+            Scanner sc = new Scanner(file);
+            sc.useDelimiter(" ");
+            int number = Integer.parseInt(sc.next());
+            for(int i = 0; i < number; i++) {
+                String firstName = sc.next();
+                System.out.println(firstName);
+                String secondName = sc.next();
+                System.out.println(secondName);
+                String mail = sc.next();
+                System.out.println(mail);
+                String phoneNumber = sc.next();
+                System.out.println(phoneNumber);
+                double sum = Double.parseDouble(sc.next());
+                System.out.println(sum);
+                int interest = Integer.parseInt(sc.next());
+                System.out.println(interest);
+
+                Investor inv = new Investor(firstName, secondName, mail, sum, interest, phoneNumber);
+                investors.add(inv);
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         System.out.println("New client: ");
         System.out.print("First name: ");
         String firstName = input.next();
@@ -53,18 +83,11 @@ public class Main {
 
         Client client = new Client(firstName, secondName, mail, sum, phoneNumber, loanTime);
 
-        System.out.println("Suma totala de plata: ");
         Collections.sort(investors, new Sortbyinterest());
-//        for(int i = 0; i < investors.size(); i++) {
-//            System.out.println(investors.get(i));
-//      }
+
         double wanted = client.getSum();
         boolean satisfied = false;
-/*        if(client.getSum() <= investors.get(0).getSum()) {
-            client.setTotalSum(investors.get(0).getSum(), investors.get(0).getInterest());
-            System.out.println(client.getTotalSum());
-        }
-*/
+
         for(int i = 0; i < investors.size() && !satisfied; i++) {
             if(wanted > investors.get(i).getSum()) {
                 client.setTotalSum(investors.get(i).getSum(), investors.get(i).getInterest());
@@ -76,9 +99,11 @@ public class Main {
             }
         }
 
-        System.out.println(client.getTotalSum());
+        System.out.println("Suma totala de plata: " + client.getTotalSum());
         client.setMonthlyPay();
         System.out.println("Rata lunara: " + client.getMonthlyPay());
+
+        System.out.println("DAE: " + client.getDAE());
         System.exit(0);
     }
 }

@@ -7,6 +7,8 @@ public class Client {
     private int loanTime;
     private double totalSum = 0;
     private double monthlyPay;
+    private double DAE;
+
 
     public int getLoanTime() {
         return loanTime;
@@ -95,4 +97,10 @@ public class Client {
     public double getMonthlyPay() {
         return monthlyPay;
     }
+
+    public double getDAE() {
+        this.DAE = (totalSum - sum) * 12 / (sum * loanTime) * 100;
+        return DAE;
+    }
+
 }

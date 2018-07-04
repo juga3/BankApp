@@ -10,14 +10,6 @@ public class Client {
     private double DAE;
 
 
-    public int getLoanTime() {
-        return loanTime;
-    }
-
-    public void setLoanTime(int loanTime) {
-        this.loanTime = loanTime;
-    }
-
     public Client(String firstName, String secondName, String mail, double sum, String phoneNumber, int loanTime) {
         this.firstName = firstName;
         this.secondName = secondName;
@@ -25,30 +17,6 @@ public class Client {
         this.sum = sum;
         this.phoneNumber = phoneNumber;
         this.loanTime = loanTime;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
     }
 
     public double getSum() {
@@ -66,18 +34,6 @@ public class Client {
                 ", loanTime=" + loanTime +
                 ", totalSum=" + totalSum +
                 "}\n";
-    }
-
-    public void setSum(double sum) {
-        this.sum = sum;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public void setTotalSum(double taken, int interest) {

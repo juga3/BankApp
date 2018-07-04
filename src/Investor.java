@@ -15,52 +15,12 @@ public class Investor {
         this. phoneNumber = phoneNumber;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
     public double getSum() {
         return sum;
     }
 
     public int getInterest() {
         return interest;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public void setSum(double sum) {
-        this.sum = sum;
-    }
-
-    public void setInterest(int interest) {
-        this.interest = interest;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     @Override

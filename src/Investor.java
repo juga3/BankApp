@@ -1,8 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.ArrayList;
-
 public class Investor {
     private String firstName;
     private String secondName;
@@ -10,8 +5,6 @@ public class Investor {
     private double sum;
     private int interest;
     private String phoneNumber;
-
-    public Investor() {}
 
     public Investor(String firstName, String secondName, String mail, double sum, int interest, String phoneNumber) {
         this.firstName = firstName;
@@ -24,6 +17,22 @@ public class Investor {
 
     public double getSum() {
         return sum;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public int getInterest() {
@@ -40,37 +49,5 @@ public class Investor {
                 ", Interest=" + interest +
                 ", PhoneNumber='" + phoneNumber + '\'' +
                 "}\n";
-    }
-
-    public ArrayList<Investor> readInvestors() {
-        ArrayList<Investor> investors = new ArrayList<Investor>();
-        File file = new File("src\\investors");
-        try {
-            Scanner sc = new Scanner(file);
-            sc.useDelimiter(" ");
-            int number = Integer.parseInt(sc.next());
-            for(int i = 0; i < number; i++) {
-                String firstName = sc.next();
-                System.out.println(firstName);
-                String secondName = sc.next();
-                System.out.println(secondName);
-                String mail = sc.next();
-                System.out.println(mail);
-                String phoneNumber = sc.next();
-                System.out.println(phoneNumber);
-                double sum = Double.parseDouble(sc.next());
-                System.out.println(sum);
-                int interest = Integer.parseInt(sc.next());
-                System.out.println(interest);
-
-                Investor inv = new Investor(firstName, secondName, mail, sum, interest, phoneNumber);
-                investors.add(inv);
-            }
-            sc.close();
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return investors;
     }
 }

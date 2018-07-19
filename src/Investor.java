@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+=======
+>>>>>>> branch
 public class Investor {
     private String firstName;
     private String secondName;
@@ -11,8 +14,11 @@ public class Investor {
     private int interest;
     private String phoneNumber;
 
+<<<<<<< HEAD
     public Investor() {}
 
+=======
+>>>>>>> branch
     public Investor(String firstName, String secondName, String mail, double sum, int interest, String phoneNumber) {
         this.firstName = firstName;
         this.secondName = secondName;
@@ -26,6 +32,25 @@ public class Investor {
         return sum;
     }
 
+<<<<<<< HEAD
+=======
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+>>>>>>> branch
     public int getInterest() {
         return interest;
     }
@@ -41,6 +66,7 @@ public class Investor {
                 ", PhoneNumber='" + phoneNumber + '\'' +
                 "}\n";
     }
+<<<<<<< HEAD
 
     public ArrayList<Investor> readInvestors() {
         ArrayList<Investor> investors = new ArrayList<Investor>();
@@ -73,4 +99,6 @@ public class Investor {
         }
         return investors;
     }
+=======
+>>>>>>> branch
 }
